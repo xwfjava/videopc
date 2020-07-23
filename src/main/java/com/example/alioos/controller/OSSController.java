@@ -1,6 +1,6 @@
 package com.example.alioos.controller;
 
-import com.example.alioos.service.OOSService;
+import com.example.alioos.service.OSSService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,24 +14,24 @@ import javax.servlet.http.HttpServletResponse;
  * date 2020/7/16
  */
 @Controller
-@RequestMapping("/oos")
-public class OOSController {
+@RequestMapping("/oss")
+public class OSSController {
 
     @Autowired
-    private OOSService oosService;
+    private OSSService ossService;
 
     @RequestMapping("/getFile/{fileName}")
     public void getFile(@PathVariable("fileName") String fileName, HttpServletResponse response){
-        oosService.getFile(fileName,response);
+        ossService.getFile(fileName,response);
     }
 
     @RequestMapping("/uploadFile")
     public void uploadFile(MultipartFile multipartFile){
-        oosService.uploadFile(multipartFile);
+        ossService.uploadFile(multipartFile);
     }
 
     @GetMapping("/uploadFolder")
     public Object uploadFolder(){
-        return oosService.uploadFolderFile();
+        return ossService.uploadFolderFile();
     }
 }

@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
@@ -18,7 +17,7 @@ import java.util.Arrays;
  * date 2020/7/15
  */
 @Service
-public class OOSService {
+public class OSSService {
 
     //上传文件
     public Object uploadFile(MultipartFile file){
