@@ -12,14 +12,14 @@ public class FfmpegService {
 
     public String hls(){
         String filePath = "E:\\tool\\example\\火蚁矿业最终成品.mp4";
-        ExecUtils.exec(filePath);
+        ExecUtils.execSectioning(filePath);
 
         return "操作成功";
     }
 
     public String hls(MultipartFile file){
         String filePath = "E:\\tool\\example\\火蚁矿业最终成品.mp4";
-        ExecUtils.exec(filePath);
+        ExecUtils.execSectioning(filePath);
 
         return "操作成功";
     }
