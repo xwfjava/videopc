@@ -21,7 +21,7 @@ pom.xml
 public class AliSendSMSUtil {
 	
 	public static void sendSMS(String phone, String code) {
-		DefaultProfile profile = DefaultProfile.getProfile("cn-hangzhou", "LTAI4G1xCZP95cmGmLPMbkGd", "bFyDVQV0EZ7DmT83zE3omSXRNqgbbX");
+		DefaultProfile profile = DefaultProfile.getProfile("cn-hangzhou", "your key", "your secret");
 		IAcsClient client = new DefaultAcsClient(profile);
 
 		CommonRequest request = new CommonRequest();
@@ -49,6 +49,6 @@ public class AliSendSMSUtil {
 	}
 
 	public static void main(String[] args) {
-		sendSMS("18657108653","123456");
+		sendSMS("17816045955","123456");
 	}
 }
