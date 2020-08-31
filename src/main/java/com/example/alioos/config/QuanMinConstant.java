@@ -8,13 +8,15 @@ public class QuanMinConstant {
     public static String hotVideoUrl = "https://quanmin.baidu.com/wise/growth/homepage?_format=json";
 
     //分类 rn：获取条数 ， pn：页码 从一开始 ， tab_name：类型名称
-    public static String typeVideoUrlExample = "https://quanmin.baidu.com/wise/growth/tab?rn=12&pn=1&timestamp=1595570533214&_format=json&tab_name=caiyi";
+    public static String typeVideoUrlExample = "https://quanmin.baidu.com/wise/growth/tab?rn=12&pn=1&timestamp=1595570533214&_format=json&tab_name=";
+    public static String typeHotVideoUrl = "https://quanmin.baidu.com/wise/growth/tab?rn=12&pn=1&timestamp=1595570533214&_format=json&tab_name=%s";
+    public static String typeVideoUrl = "https://quanmin.baidu.com/wise/growth/api/home/tabmorelist?rn=12&pn=%s&timestamp=1596779797241&tab_name=%s&_format=json";
 
     public static String path = "E:\\tool\\example\\quanmin\\";
 
 
 
-    enum TabName{
+    public enum TabName{
         tuijian("推荐"),
         zhishi("知识"),
         gaoxiao("搞笑"),
