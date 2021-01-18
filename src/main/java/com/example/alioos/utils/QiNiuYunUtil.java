@@ -19,14 +19,16 @@ import com.qiniu.util.StringMap;
  * date 2020/8/8
  */
 public class QiNiuYunUtil {
-    public static void main(String[] args) {
+
+    static String accessKey = "your access key";
+    static String secretKey = "your secret key";
+
+    public static void main1(String[] args) {
         Configuration cfg = new Configuration(Region.region0());
 //...其他参数参考类注释
         UploadManager uploadManager = new UploadManager(cfg);
 //...生成上传凭证，然后准备上传
-        String accessKey = "your accessKey";
-        String secretKey = "your secretKey";
-        String bucket = "your bucket";
+        String bucket = "botaovideo";
 //如果是Windows情况下，格式是 D:\\qiniu\\test.png
         String localFilePath = "E:\\tool\\example\\pc2\\6846298830045039872.mp4";
 //默认不指定key的情况下，以文件内容的hash值作为文件名
@@ -54,8 +56,6 @@ public class QiNiuYunUtil {
         //构造一个带指定 Region 对象的配置类
         Configuration cfg = new Configuration(Region.region0());
 //...其他参数参考类注释
-        String accessKey = "your access key";
-        String secretKey = "your secret key";
         String bucket = "your bucket name";
         Auth auth = Auth.create(accessKey, secretKey);
         BucketManager bucketManager = new BucketManager(auth, cfg);
@@ -89,10 +89,8 @@ public class QiNiuYunUtil {
         //构造一个带指定 Region 对象的配置类
         Configuration cfg = new Configuration(Region.region0());
 //...其他参数参考类注释
-        String accessKey = "your access key";
-        String secretKey = "your secret key";
         String bucket = "your bucket name";
-        String key = "your file key";
+        String key = "7_1597074160427.mp4";
         Auth auth = Auth.create(accessKey, secretKey);
         BucketManager bucketManager = new BucketManager(auth, cfg);
         try {
@@ -109,8 +107,6 @@ public class QiNiuYunUtil {
 //...其他参数参考类注释
         UploadManager uploadManager = new UploadManager(cfg);
 //...生成上传凭证，然后准备上传
-        String accessKey = "your access key";
-        String secretKey = "your secret key";
         String bucket = "your bucket name";
 //如果是Windows情况下，格式是 D:\\qiniu\\test.png
 //        String localFilePath = "E:\\tool\\example\\pc2\\6845306166726200589.mp4";
@@ -131,13 +127,11 @@ public class QiNiuYunUtil {
 
     public static void videoAudit(){
 //...其他参数参考类注释
-        String accessKey = "your access key";
-        String secretKey = "your secret key";
         Auth auth = Auth.create(accessKey, secretKey);
 
         String url = "http://ai.qiniuapi.com/v3/video/censor";
         String host = "ai.qiniuapi.com";
-        String data = "{\"data\":{\"uri\": \"https://cdn1.k1chian.com/1596876955770.mp4\"},\"params\": {\"scenes\": [\"pulp\"],\"hook_url\": \"http://xwftest1.vaiwan.com/VIDEO/video/auditResult\",\"cut_param\": {\"interval_msecs\": 5000}}}";
+        String data = "{\"data\":{\"uri\": \"https://cdn.klchian.com/1596876955770.mp4\"},\"params\": {\"scenes\": [\"pulp\"],\"hook_url\": \"http://xwftest.vaiwan.com/CHAIN/video/auditResult\",\"cut_param\": {\"interval_msecs\": 5000}}}";
         String contentType = "application/json";
         String method = "POST";
         StringMap stringMap = auth.authorizationV2(url, method, data.getBytes(), contentType);
@@ -161,8 +155,7 @@ public class QiNiuYunUtil {
 
     public static void videoAuditResult(){
 //...其他参数参考类注释
-        String accessKey = "your access key";
-        String secretKey = "your secret key";
+
         Auth auth = Auth.create(accessKey, secretKey);
         String jobId = "5f4a030c6821180007b3e175";
         String url = "http://ai.qiniuapi.com/v3/jobs/video/"+jobId;
@@ -186,7 +179,7 @@ public class QiNiuYunUtil {
         }
     }
 
-    public static void main2(String[] args) {
-        videoAuditResult();
+    public static void main(String[] args) {
+        delete();
     }
 }
